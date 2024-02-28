@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://bright86.github.io/posts/7aad88cc.html</loc>
+    
+    <lastmod>2024-02-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://bright86.github.io/posts/25c42a53.html</loc>
     
     <lastmod>2024-02-28</lastmod>
@@ -362,6 +369,13 @@
   
   <url>
     <loc>https://bright86.github.io/tags/%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88/</loc>
+    <lastmod>2024-02-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bright86.github.io/tags/Gitea/</loc>
     <lastmod>2024-02-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
