@@ -763,18 +763,18 @@
 </ul>
 <p><strong>windows：</strong> 到git官网上下载.exe文件,Download git,安装选项全部默认即可。</p>
 <h4 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2. 安装node.js"></a>2. 安装node.js</h4><p><code>Hexo</code>是基于<code>node.js</code>编写的，所以需要安装一下<code>node.js</code>和里面的<code>npm</code>工具。</p>
-<p><strong>windows：</strong> 到<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">Node.js官网</a>下载<code>.exe</code>文件，安装选项全部默认。安装好之后，按<code>Win+R</code>打开cmd命令提示符，输入<code>node -v</code>和<code>npm -v</code>，若出现版本号，则说明安装成功。</p>
+<p><strong>windows：</strong> 到<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js官网</a>下载<code>.msi</code>文件，安装选项全部默认。安装好之后，按<code>Win+R</code>打开cmd命令提示符，输入<code>node -v</code>和<code>npm -v</code>，若出现版本号，则说明安装成功。</p>
 <h4 id="3-添加npm国内源"><a href="#3-添加npm国内源" class="headerlink" title="3. 添加npm国内源"></a>3. 添加npm国内源</h4><p>使用阿里的国内镜像进行加速下载</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4. 安装Hexo"></a>4. 安装Hexo</h4><p>前面<code>git</code>和<code>nodejs</code>安装好后，就可以安装<code>hexo</code>了，你可以先创建一个文件夹<code>MyBlog</code>，用来存放自己的博客文件，然后<code>cd</code>到这个文件夹下（或者在这个文件夹下直接鼠标右键<code>git bash</code>打开）。</p>
 <p>比如我的博客文件都存放在<code>C:\MyBlog</code>目录下。</p>
 <p>在该目录下右键点击<code>Git Bash Here</code>，打开<code>git</code>的控制台窗口，以后我们所有的操作都在<code>git</code>控制台进行，就不用<code>Windows</code>自带的<code>cmd</code>了。</p>
-<p>定位到该目录下，输入<code>npm install -g hexo-cli</code>安装<code>Hexo</code>。可能会有几个报错，不用理会。</p>
+<p>定位到该目录下，输入<code>npm install -g hexo-cli</code>安装<code>Hexo</code>。可能会有几个报错，不用理会。（用最新的<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">npm</a>来安装）</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></tbody></table></figure>
 
 <p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
-<p>接下来初始化一下<code>hexo</code>,即初始化我们的博客网站。例如我的在<code>C:\MyBlog</code>文件夹下的命令行中，输入<code>hexo init</code>初始化文件夹</p>
+<p>接下来初始化一下<code>hexo</code>,即初始化我们的博客网站。例如我的在<code>D:\MyBlog</code>文件夹下的命令行中，输入<code>hexo init</code>初始化文件夹</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></tbody></table></figure>
 
 <p>新建完成后，指定文件夹<code>MyBlog</code>目录下有：</p>
@@ -792,7 +792,7 @@
 
 <p>将下载好的<code>LuckyBlog</code>全部复制到<code>MyBlog</code>目录下，如果复制过程中出现重复文件，点击替换。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20210518202657.png"></p>
-<p>最后使用 <code>npm i</code> 或者 <code>npm install</code> 安装依赖环境包即可。</p>
+<p>最后使用 <code>npm i</code> 或者 <code>npm install</code> 安装依赖环境包即可(注意：由于LuckyBlog是20年4月份做好的，所依赖的<a target="_blank" rel="noopener" href="https://nodejs.org/en/about/previous-releases">npm</a>要选19年左右的版本比较适宜)。</p>
 <blockquote>
 <p>如果安装依赖环境出错，可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/Seven71111/article/details/103364738">这篇文章</a>。</p>
 </blockquote>
