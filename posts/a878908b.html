@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="听听音乐, Bright 计算机">
+    <meta name="keywords" content="install-k8s, Bright 计算机">
     <meta name="description" content="本科 | 计算机科学与技术">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>听听音乐 | Bright86</title>
+    <title>install-k8s | Bright86</title>
 
     <link rel="icon" type="image/png" href="/favicon1.png">
 
@@ -510,12 +510,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013951.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928021853.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">听听音乐</h1>
+                    <h1 class="description center-align post-title">install-k8s</h1>
                 </div>
             </div>
         </div>
@@ -648,28 +648,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-19
+                    2024-01-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-02-10
+                    2025-01-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    521
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -687,7 +687,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="0x01-docker安装过程"><a href="#0x01-docker安装过程" class="headerlink" title="0x01 docker安装过程"></a>0x01 docker安装过程</h2><h5 id="官网安装"><a href="#官网安装" class="headerlink" title="官网安装"></a><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官网安装</a></h5><p>windows远程连接 cmd ssh user@ifconfig</p>
+<h3 id="视频注意点：1-6-docker原理，镜像，容器，仓库"><a href="#视频注意点：1-6-docker原理，镜像，容器，仓库" class="headerlink" title="视频注意点：1.6 docker原理，镜像，容器，仓库"></a>视频注意点：1.6 docker原理，镜像，容器，仓库</h3><p>镜像只读的模板，可创建容器，容器是docker的运行实例，提供一个独立的可移植的环境，可在此应用中运行程序。镜像与容器，相当于类与实例（模板与模板的实例，食谱与按照食谱做出的菜）仓库用来存储docker实例的地方，集中存储与管理镜像。分享出来，镜像的共享与复用<br>docker体系结构（client,docker host,registry）<br>docker client与docker daemon通过socket或RESTFUL api进行通信<br>docker daemon是服务端守护进程，管理各种资源<br>容器化：创建Dockerfile，使用Dockerfile构建镜像，使用镜像创建和运行容器</p>
+<h2 id="0x02-学习搭建gitea"><a href="#0x02-学习搭建gitea" class="headerlink" title="0x02 学习搭建gitea"></a>0x02 学习搭建gitea</h2><h4 id="创建一个名为-data-和-config"><a href="#创建一个名为-data-和-config" class="headerlink" title="创建一个名为 data 和 config:"></a>创建一个名为 data 和 config:</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ mkdir <span class="token operator">-</span>p gitea/<span class="token punctuation">{</span><span class="token keyword">data</span><span class="token punctuation">,</span>config<span class="token punctuation">}</span>
+$ cd gitea
+$ touch docker-compose<span class="token punctuation">.</span>yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改"><a href="#要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改" class="headerlink" title="要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改"></a>要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">version: <span class="token string">"2"</span>
+
+services:
+  server:
+    image: gitea/gitea:1<span class="token punctuation">.</span>20<span class="token punctuation">.</span>6-rootless
+    environment:
+      GITEA__database__DB_TYPE: mysql
+      GITEA__database__HOST: db:3306
+      GITEA__database__NAME: gitea
+      GITEA__database__USER: gitea
+      GITEA__database__PASSWD: gitea
+    restart: always
+    volumes:
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span><span class="token keyword">data</span>:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/gitea
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>config:<span class="token operator">/</span>etc/gitea
+      <span class="token operator">-</span> <span class="token operator">/</span>etc/timezone:<span class="token operator">/</span>etc/timezone:ro
+      <span class="token operator">-</span> <span class="token operator">/</span>etc/localtime:<span class="token operator">/</span>etc/localtime:ro
+    ports:
+      <span class="token operator">-</span> <span class="token string">"3000:3000"</span>
+      <span class="token operator">-</span> <span class="token string">"222:22"</span>
+    depends_on:
+      <span class="token operator">-</span> db
+
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gitea
+      MYSQL_USER: gitea
+      MYSQL_PASSWORD: gitea
+      MYSQL_DATABASE: gitea
+    volumes:
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>mysql:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="启动docker-compose"><a href="#启动docker-compose" class="headerlink" title="启动docker-compose"></a>启动docker-compose</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker-compose <span class="token operator">-</span>f docker-compose<span class="token punctuation">.</span>yml up <span class="token operator">-</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="如果出现docker-compose-未找到命令"><a href="#如果出现docker-compose-未找到命令" class="headerlink" title="如果出现docker-compose: 未找到命令"></a>如果出现docker-compose: 未找到命令</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 执行以下命令下载 Docker Compose 的可执行文件：</span>
+$ sudo curl <span class="token operator">-</span>L <span class="token string">"https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>s<span class="token punctuation">)</span></span>-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>m<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>o <span class="token operator">/</span>usr/local/bin/docker-compose
+<span class="token comment">## 授予可执行权限：</span>
+$ sudo chmod <span class="token operator">+</span>x <span class="token operator">/</span>usr/local/bin/docker-compose
+<span class="token comment">## 创建一个符号链接：</span>
+$ sudo ln <span class="token operator">-</span>s <span class="token operator">/</span>usr/local/bin/docker-compose <span class="token operator">/</span>usr/bin/docker-compose
+<span class="token comment">## 检查安装版本</span>
+$ docker-compose <span class="token operator">--</span>version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="0x03-看mysql有没在运行"><a href="#0x03-看mysql有没在运行" class="headerlink" title="0x03 看mysql有没在运行"></a>0x03 看mysql有没在运行</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ docker <span class="token function">ps</span> <span class="token punctuation">|</span>grep mysql
+<span class="token comment">## 查找已安装的 MySQL 镜像：</span>
+$ docker images <span class="token punctuation">|</span> grep mysql
+<span class="token comment">## 运行 MySQL 容器：</span>
+$ docker run <span class="token operator">--</span>name gitea_mysql <span class="token operator">-</span>p 3306:3306 <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=&lt;密码&gt; <span class="token operator">-</span>d mysql:8
+<span class="token comment">## 验证 MySQL 容器是否正在运行：</span>
+$ docker <span class="token function">ps</span>
+<span class="token comment">## 进入mysql容器内部，看数据库</span>
+$ docker exec <span class="token operator">-</span>ti gitea_mysql bash
+ <span class="token comment">#/ mysql -u root -p123456</span>
+ <span class="token comment">#/ show databases;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="0x04-Gitea上传下载代码"><a href="#0x04-Gitea上传下载代码" class="headerlink" title="0x04 Gitea上传下载代码"></a>0x04 Gitea上传下载代码</h2>
                 
             </div>
             <hr/>
@@ -713,7 +776,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Bright86/List/tools/index.html">https://github.com/Bright86/List/tools/index.html</a>
+                    <a href="https://github.com/Bright86/posts/a878908b.html">https://github.com/Bright86/posts/a878908b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1220,18 +1283,17 @@ new Valine({
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/List/tools/index.html">
+                <a href="/posts/4a17b156.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013951.jpg" class="responsive-img" alt="听听音乐">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">听听音乐</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1241,9 +1303,9 @@ new Valine({
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1252,7 +1314,6 @@ new Valine({
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1260,37 +1321,52 @@ new Valine({
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/List/tools/index.html">
+                <a href="/posts/d74d8b76.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013951.jpg" class="responsive-img" alt="听听音乐">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013834.jpg" class="responsive-img" alt="LuckyBlog开源搭建教程">
                         
-                        <span class="card-title">听听音乐</span>
+                        <span class="card-title">LuckyBlog开源搭建教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            之前在B站上发布了个人博客的视频，播放量也破千了，有网友私聊也想要搭建一个这样的博客。经过一段时间的准备，现将博客LuckyBlog的源代码公布出来，大家只需要根据以下的步骤，即可快速搭建一个漂亮且完善的博客。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Bright86
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%AF%87/" class="post-category">
+                                    博客篇
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo-blog-lucky/">
+                        <span class="chip bg-color">hexo-blog-lucky</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">博客搭建教程</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

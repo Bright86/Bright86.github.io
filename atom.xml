@@ -6,7 +6,7 @@
   <link href="https://github.com/Bright86/atom.xml" rel="self"/>
   
   <link href="https://github.com/Bright86/"/>
-  <updated>2025-01-23T06:34:10.697Z</updated>
+  <updated>2025-01-24T08:48:00.381Z</updated>
   <id>https://github.com/Bright86/</id>
   
   <author>
@@ -20,15 +20,35 @@
     <title>Hello World</title>
     <link href="https://github.com/Bright86/posts/4a17b156.html"/>
     <id>https://github.com/Bright86/posts/4a17b156.html</id>
-    <published>2025-01-23T03:38:24.267Z</published>
-    <updated>2025-01-23T06:34:10.697Z</updated>
+    <published>2025-01-24T08:48:00.381Z</published>
+    <updated>2025-01-24T08:48:00.381Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>install-k8s</title>
+    <link href="https://github.com/Bright86/posts/a878908b.html"/>
+    <id>https://github.com/Bright86/posts/a878908b.html</id>
+    <published>2024-01-24T09:27:01.000Z</published>
+    <updated>2025-01-24T09:30:40.624Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="0x01-docker安装过程"><a href="#0x01-docker安装过程" class="headerlink" title="0x01 docker安装过程"></a>0x01 docker安装过程</h2><h5 id="官网安装"><a href="#官网安装" class="headerlink" title="官网安装"></a><a href="https://docs.docker.com/engine/install/centos/">官网安装</a></h5><p>windows远程连接 cmd ssh user@ifconfig</p><h3 id="视频注意点：1-6-docker原理，镜像，容器，仓库"><a href="#视频注意点：1-6-docker原理，镜像，容器，仓库" class="headerlink" title="视频注意点：1.6 docker原理，镜像，容器，仓库"></a>视频注意点：1.6 docker原理，镜像，容器，仓库</h3><p>镜像只读的模板，可创建容器，容器是docker的运行实例，提供一个独立的可移植的环境，可在此应用中运行程序。镜像与容器，相当于类与实例（模板与模板的实例，食谱与按照食谱做出的菜）仓库用来存储docker实例的地方，集中存储与管理镜像。分享出来，镜像的共享与复用<br>docker体系结构（client,docker host,registry）<br>docker client与docker daemon通过socket或RESTFUL api进行通信<br>docker daemon是服务端守护进程，管理各种资源<br>容器化：创建Dockerfile，使用Dockerfile构建镜像，使用镜像创建和运行容器</p><h2 id="0x02-学习搭建gitea"><a href="#0x02-学习搭建gitea" class="headerlink" title="0x02 学习搭建gitea"></a>0x02 学习搭建gitea</h2><h4 id="创建一个名为-data-和-config"><a href="#创建一个名为-data-和-config" class="headerlink" title="创建一个名为 data 和 config:"></a>创建一个名为 data 和 config:</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ mkdir <span class="token operator">-</span>p gitea/<span class="token punctuation">{</span><span class="token keyword">data</span><span class="token punctuation">,</span>config<span class="token punctuation">}</span>$ cd gitea$ touch docker-compose<span class="token punctuation">.</span>yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h4 id="要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改"><a href="#要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改" class="headerlink" title="要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改"></a>要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">version: <span class="token string">"2"</span>services:  server:    image: gitea/gitea:1<span class="token punctuation">.</span>20<span class="token punctuation">.</span>6-rootless    environment:      GITEA__database__DB_TYPE: mysql      GITEA__database__HOST: db:3306      GITEA__database__NAME: gitea      GITEA__database__USER: gitea      GITEA__database__PASSWD: gitea    restart: always    volumes:      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span><span class="token keyword">data</span>:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/gitea      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>config:<span class="token operator">/</span>etc/gitea      <span class="token operator">-</span> <span class="token operator">/</span>etc/timezone:<span class="token operator">/</span>etc/timezone:ro      <span class="token operator">-</span> <span class="token operator">/</span>etc/localtime:<span class="token operator">/</span>etc/localtime:ro    ports:      <span class="token operator">-</span> <span class="token string">"3000:3000"</span>      <span class="token operator">-</span> <span class="token string">"222:22"</span>    depends_on:      <span class="token operator">-</span> db  db:    image: mysql:8    restart: always    environment:      MYSQL_ROOT_PASSWORD: gitea      MYSQL_USER: gitea      MYSQL_PASSWORD: gitea      MYSQL_DATABASE: gitea    volumes:      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>mysql:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="启动docker-compose"><a href="#启动docker-compose" class="headerlink" title="启动docker-compose"></a>启动docker-compose</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker-compose <span class="token operator">-</span>f docker-compose<span class="token punctuation">.</span>yml up <span class="token operator">-</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="如果出现docker-compose-未找到命令"><a href="#如果出现docker-compose-未找到命令" class="headerlink" title="如果出现docker-compose: 未找到命令"></a>如果出现docker-compose: 未找到命令</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 执行以下命令下载 Docker Compose 的可执行文件：</span>$ sudo curl <span class="token operator">-</span>L <span class="token string">"https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>s<span class="token punctuation">)</span></span>-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>m<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>o <span class="token operator">/</span>usr/local/bin/docker-compose<span class="token comment">## 授予可执行权限：</span>$ sudo chmod <span class="token operator">+</span>x <span class="token operator">/</span>usr/local/bin/docker-compose<span class="token comment">## 创建一个符号链接：</span>$ sudo ln <span class="token operator">-</span>s <span class="token operator">/</span>usr/local/bin/docker-compose <span class="token operator">/</span>usr/bin/docker-compose<span class="token comment">## 检查安装版本</span>$ docker-compose <span class="token operator">--</span>version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="0x03-看mysql有没在运行"><a href="#0x03-看mysql有没在运行" class="headerlink" title="0x03 看mysql有没在运行"></a>0x03 看mysql有没在运行</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ docker <span class="token function">ps</span> <span class="token punctuation">|</span>grep mysql<span class="token comment">## 查找已安装的 MySQL 镜像：</span>$ docker images <span class="token punctuation">|</span> grep mysql<span class="token comment">## 运行 MySQL 容器：</span>$ docker run <span class="token operator">--</span>name gitea_mysql <span class="token operator">-</span>p 3306:3306 <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=&lt;密码&gt; <span class="token operator">-</span>d mysql:8<span class="token comment">## 验证 MySQL 容器是否正在运行：</span>$ docker <span class="token function">ps</span><span class="token comment">## 进入mysql容器内部，看数据库</span>$ docker exec <span class="token operator">-</span>ti gitea_mysql bash <span class="token comment">#/ mysql -u root -p123456</span> <span class="token comment">#/ show databases;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="0x04-Gitea上传下载代码"><a href="#0x04-Gitea上传下载代码" class="headerlink" title="0x04 Gitea上传下载代码"></a>0x04 Gitea上传下载代码</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -48,7 +68,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -74,7 +94,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -100,7 +120,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -126,7 +146,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -152,7 +172,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
@@ -180,7 +200,7 @@
     
       
       
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
       
     
     
