@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Bright 计算机">
+    <meta name="keywords" content="k8s-introduce, Bright 计算机">
     <meta name="description" content="本科 | 计算机科学与技术">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Bright86</title>
+    <title>k8s-introduce | Bright86</title>
 
     <link rel="icon" type="image/png" href="/favicon1.png">
 
@@ -510,12 +510,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928012804.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">k8s-introduce</h1>
                 </div>
             </div>
         </div>
@@ -634,9 +634,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/Gitea/">
+                                <span class="chip bg-color">Gitea</span>
+                            </a>
+                        
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -662,14 +674,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -687,19 +699,250 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="docker安装过程"><a href="#docker安装过程" class="headerlink" title="docker安装过程"></a>docker安装过程</h2><h4 id="官网安装"><a href="#官网安装" class="headerlink" title="官网安装"></a><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">官网安装</a></h4><p>windows远程连接 cmd ssh user@ifconfig</p>
+<h5 id="视频注意点：1-6-docker原理，"><a href="#视频注意点：1-6-docker原理，" class="headerlink" title="视频注意点：1.6 docker原理，"></a>视频注意点：1.6 docker原理，</h5><h5 id="学习搭建gitea"><a href="#学习搭建gitea" class="headerlink" title="学习搭建gitea"></a>学习搭建gitea</h5><h5 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h5><h4 id="创建一个名为-data-和-config"><a href="#创建一个名为-data-和-config" class="headerlink" title="创建一个名为 data 和 config:"></a>创建一个名为 data 和 config:</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ mkdir <span class="token operator">-</span>p gitea/<span class="token punctuation">{</span><span class="token keyword">data</span><span class="token punctuation">,</span>config<span class="token punctuation">}</span>
+$ cd gitea
+$ touch docker-compose<span class="token punctuation">.</span>yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改"><a href="#要将-Gitea-与-MySQL-数据库结合使用，对上面创建的-docker-compose-yml-文件进行以下更改" class="headerlink" title="要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改"></a>要将 Gitea 与 MySQL 数据库结合使用，对上面创建的 docker-compose.yml 文件进行以下更改</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">version: <span class="token string">"2"</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+services:
+  server:
+    image: gitea/gitea:1<span class="token punctuation">.</span>20<span class="token punctuation">.</span>6-rootless
+    environment:
+      GITEA__database__DB_TYPE: mysql
+      GITEA__database__HOST: db:3306
+      GITEA__database__NAME: gitea
+      GITEA__database__USER: gitea
+      GITEA__database__PASSWD: gitea
+    restart: always
+    volumes:
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span><span class="token keyword">data</span>:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/gitea
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>config:<span class="token operator">/</span>etc/gitea
+      <span class="token operator">-</span> <span class="token operator">/</span>etc/timezone:<span class="token operator">/</span>etc/timezone:ro
+      <span class="token operator">-</span> <span class="token operator">/</span>etc/localtime:<span class="token operator">/</span>etc/localtime:ro
+    ports:
+      <span class="token operator">-</span> <span class="token string">"3000:3000"</span>
+      <span class="token operator">-</span> <span class="token string">"222:22"</span>
+    depends_on:
+      <span class="token operator">-</span> db
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gitea
+      MYSQL_USER: gitea
+      MYSQL_PASSWORD: gitea
+      MYSQL_DATABASE: gitea
+    volumes:
+      <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>mysql:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h4 id="启动docker-compose"><a href="#启动docker-compose" class="headerlink" title="启动docker-compose"></a>启动docker-compose</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker-compose <span class="token operator">-</span>f docker-compose<span class="token punctuation">.</span>yml up <span class="token operator">-</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="如果出现docker-compose-未找到命令"><a href="#如果出现docker-compose-未找到命令" class="headerlink" title="如果出现docker-compose: 未找到命令"></a>如果出现docker-compose: 未找到命令</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 执行以下命令下载 Docker Compose 的可执行文件：</span>
+$ sudo curl <span class="token operator">-</span>L <span class="token string">"https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>s<span class="token punctuation">)</span></span>-<span class="token function">$<span class="token punctuation">(</span>uname <span class="token operator">-</span>m<span class="token punctuation">)</span></span>"</span> <span class="token operator">-</span>o <span class="token operator">/</span>usr/local/bin/docker-compose
+<span class="token comment">## 授予可执行权限：</span>
+$ sudo chmod <span class="token operator">+</span>x <span class="token operator">/</span>usr/local/bin/docker-compose
+<span class="token comment">## 创建一个符号链接：</span>
+$ sudo ln <span class="token operator">-</span>s <span class="token operator">/</span>usr/local/bin/docker-compose <span class="token operator">/</span>usr/bin/docker-compose
+<span class="token comment">## 检查安装版本</span>
+$ docker-compose <span class="token operator">--</span>version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="看mysql有没在运行"><a href="#看mysql有没在运行" class="headerlink" title="看mysql有没在运行"></a>看mysql有没在运行</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ docker <span class="token function">ps</span> <span class="token punctuation">|</span>grep mysql
+<span class="token comment">## 查找已安装的 MySQL 镜像：</span>
+$ docker images <span class="token punctuation">|</span> grep mysql
+<span class="token comment">## 运行 MySQL 容器：</span>
+$ docker run <span class="token operator">--</span>name gitea_mysql <span class="token operator">-</span>p 3306:3306 <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=&lt;密码&gt; <span class="token operator">-</span>d mysql:8
+<span class="token comment">## 验证 MySQL 容器是否正在运行：</span>
+$ docker <span class="token function">ps</span>
+<span class="token comment">## 进入mysql容器内部，看数据库</span>
+$ docker exec <span class="token operator">-</span>ti gitea_mysql bash
+ <span class="token comment">#/ mysql -u root -p123456</span>
+ <span class="token comment">#/ show databases;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="给VMware扩容"><a href="#给VMware扩容" class="headerlink" title="给VMware扩容"></a>给VMware扩容</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ &amp; <span class="token string">"D:\VMware\VMware Workstation\vmware-vdiskmanager.exe"</span> <span class="token operator">-</span>x 80GB <span class="token string">"D:\VMware\server7\CentOS 7.vmdk"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="k8s安装"><a href="#k8s安装" class="headerlink" title="k8s安装"></a>k8s安装</h2><h4 id="k8s集群节点准备"><a href="#k8s集群节点准备" class="headerlink" title="k8s集群节点准备"></a>k8s集群节点准备</h4><h5 id="1-1-配置主机名"><a href="#1-1-配置主机名" class="headerlink" title="1.1 配置主机名"></a>1.1 配置主机名</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ hostnamectl <span class="token function">set-hostname</span> k8s-master
+$ hostnamectl <span class="token comment">##查看有没修改</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="1-2-配置主机IP地址"><a href="#1-2-配置主机IP地址" class="headerlink" title="1.2 配置主机IP地址"></a>1.2 配置主机IP地址</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ vi <span class="token operator">/</span>etc/sysconfig/network-scripts/ifcfg-ens33
+
+BOOTPROTO=<span class="token string">"none"</span>
+
+IPADDR=<span class="token string">"192.168.10.160"</span> 修改X为当前主机分配的IP地址
+PREFIX=<span class="token string">"24"</span>
+GATEWAY=<span class="token string">"192.168.10.2"</span>
+DNS1=<span class="token string">"119.29.29.29"</span>
+DNS1=<span class="token string">"8.8.8.8"</span>
+
+$ systemctl restart network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="1-3-配置主机名与IP地址解析"><a href="#1-3-配置主机名与IP地址解析" class="headerlink" title="1.3 配置主机名与IP地址解析"></a>1.3 配置主机名与IP地址解析</h5><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ vi <span class="token operator">/</span>etc/hosts
+
+192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135 k8s-master0
+192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>138 k8s-master1
+192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>139 k8s-node1
+
+$ systemctl restart systemd-hostnamed
+$ ping k8s-master <span class="token comment">##看是否解析 </span>
+$ ip a s ens33
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-4-主机安全设置"><a href="#1-4-主机安全设置" class="headerlink" title="1.4 主机安全设置"></a>1.4 主机安全设置</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ systemctl disable <span class="token operator">--</span>now firewalld
+$ firewall-cmd <span class="token operator">--</span>state <span class="token comment">##查看是否关闭</span>
+
+$ vi <span class="token operator">/</span>etc/selinux/config
+<span class="token comment">## SELINUX = diabled</span>
+<span class="token comment">## 或者用下面的操作</span>
+$ sed <span class="token operator">-</span><span class="token function">ri</span> <span class="token string">'s/SELINUX=enforcing/SELINUX=disabled/'</span> <span class="token operator">/</span>etc/selinux/config
+$ sestatus <span class="token comment">##查看状态</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-5-时间同步"><a href="#1-5-时间同步" class="headerlink" title="1.5 时间同步"></a>1.5 时间同步</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ ntpdate time1<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="1-6-升级操作系统内核"><a href="#1-6-升级操作系统内核" class="headerlink" title="1.6 升级操作系统内核"></a>1.6 升级操作系统内核</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ uname <span class="token operator">-</span>r
+<span class="token comment">## 导入elrepo gpg key,安装elrepo YUM源仓库</span>
+$ yum update
+$ rpm <span class="token operator">--</span>import https:<span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>elrepo<span class="token punctuation">.</span>org/RPM-GPG-KEY-elrepo<span class="token punctuation">.</span>org
+
+$ yum install https:<span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>elrepo<span class="token punctuation">.</span>org/elrepo-release-7<span class="token punctuation">.</span>el7<span class="token punctuation">.</span>elrepo<span class="token punctuation">.</span>noarch<span class="token punctuation">.</span>rpm
+<span class="token comment">## 安装kernel-ml版本，ml为长期稳定版本，lt为长期维护版本</span>
+$ yum <span class="token operator">--</span>enablerepo=<span class="token string">"elrepo-kernel"</span> <span class="token operator">-</span>y install kernel-lt<span class="token punctuation">.</span>x86_64
+
+<span class="token comment">## 设置grub2默认引导为0</span>
+$ grub2-<span class="token function">set-default</span> 0
+<span class="token comment">## 重新生成grub2引导文件</span>
+$ grub2-mkconfig <span class="token operator">-</span>o <span class="token operator">/</span>boot/grub2/grub<span class="token punctuation">.</span>cfg
+
+<span class="token comment">## 更新后，需要重启，使用升级的内核生效。</span>
+$ reboot
+$ uname <span class="token operator">-</span>r <span class="token comment">## 重启后，需要验证内核是否为更新对应的版本</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h4 id="1-7-配置内核路由转发及网桥过滤"><a href="#1-7-配置内核路由转发及网桥过滤" class="headerlink" title="1.7 配置内核路由转发及网桥过滤"></a>1.7 配置内核路由转发及网桥过滤</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 添加网桥过滤及内核转发配置文件</span>
+$ <span class="token function">cat</span> &gt; <span class="token operator">/</span>etc/sysctl<span class="token punctuation">.</span>d/k8s<span class="token punctuation">.</span>conf &lt;&lt; EOF
+net<span class="token punctuation">.</span>bridge<span class="token punctuation">.</span>bridge-nf-call-ip6tables = 1
+net<span class="token punctuation">.</span>bridge<span class="token punctuation">.</span>bridge-nf-call-iptables = 1
+net<span class="token punctuation">.</span>ipv4<span class="token punctuation">.</span>ip_forward = 1
+vm<span class="token punctuation">.</span>swappiness = 0
+EOF
+
+$ modprobe br_netfilter <span class="token comment">## 加载br_netfilter模块</span>
+
+$ sysctl <span class="token operator">-</span>p <span class="token operator">/</span>etc/sysctl<span class="token punctuation">.</span>d/k8s<span class="token punctuation">.</span>conf  <span class="token comment">##看有没配置好,</span>
+$ lsmod <span class="token punctuation">|</span> grep br_netfilter <span class="token comment">#或者使用这个来查看</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-8-安装ipset及ipvsadm（性能比iptables要好些）"><a href="#1-8-安装ipset及ipvsadm（性能比iptables要好些）" class="headerlink" title="1.8 安装ipset及ipvsadm（性能比iptables要好些）"></a>1.8 安装ipset及ipvsadm（性能比iptables要好些）</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 安装ipset及ipvsadm</span>
+$ yum <span class="token operator">-</span>y install ipset ipvsadm
+
+<span class="token comment">## 配置ipvsadm模块加载方式,添加需要加载的模块</span>
+$  <span class="token function">cat</span> &gt; <span class="token operator">/</span>etc/sysconfig/modules/ipvs<span class="token punctuation">.</span>modules &lt;&lt;EOF
+<span class="token comment">#!/bin/bash</span>
+modprobe <span class="token operator">--</span> ip_vs
+modprobe <span class="token operator">--</span> ip_vs_rr
+modprobe <span class="token operator">--</span> ip_vs_wrr
+modprobe <span class="token operator">--</span> ip_vs_sh
+modprobe <span class="token operator">--</span> nf_conntrack
+EOF
+
+<span class="token comment">## 授权、运行、检查是否加载</span>
+$ chmod 755 <span class="token operator">/</span>etc/sysconfig/modules/ipvs<span class="token punctuation">.</span>modules &amp;&amp; bash <span class="token operator">/</span>etc/sysconfig/modules/ipvs<span class="token punctuation">.</span>modules &amp;&amp; lsmod <span class="token punctuation">|</span> grep <span class="token operator">-</span>e ip_vs <span class="token operator">-</span>e nf_conntrack
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-9-关闭SWAP分区"><a href="#1-9-关闭SWAP分区" class="headerlink" title="1.9 关闭SWAP分区"></a>1.9 关闭SWAP分区</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ vi <span class="token operator">/</span>etc/fstab
+<span class="token comment"># /dev/mapper/centos-swap swap ##注释掉这行</span>
+
+$ free <span class="token operator">-</span>m <span class="token comment">##查看有没关闭</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="1-10-配置ssh免密登录"><a href="#1-10-配置ssh免密登录" class="headerlink" title="1.10 配置ssh免密登录"></a>1.10 配置ssh免密登录</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ ssh-keygen
+$ cd <span class="token operator">/</span>root/<span class="token punctuation">.</span>ssh
+$ <span class="token function">ls</span>
+$ <span class="token function">cp</span> id_rsa<span class="token punctuation">.</span>pub authorized_keys
+$ <span class="token function">ls</span>
+$  <span class="token keyword">for</span> i in 135 136 137 138
+&gt; <span class="token keyword">do</span>
+&gt; scp <span class="token operator">-</span>r <span class="token operator">/</span>root/<span class="token punctuation">.</span>ssh 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span><span class="token variable">$i</span>:<span class="token operator">/</span>root/
+&gt; done
+
+<span class="token comment">## 进行验证，是否免密登录</span>
+$ ssh 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="二、etcd集群部署"><a href="#二、etcd集群部署" class="headerlink" title="二、etcd集群部署"></a>二、etcd集群部署</h2><h4 id="2-1-在k8s集群master节点上安装etcd"><a href="#2-1-在k8s集群master节点上安装etcd" class="headerlink" title="2.1 在k8s集群master节点上安装etcd"></a>2.1 在k8s集群master节点上安装etcd</h4><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ wget https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/coreos/etcd/releases/download/v3<span class="token punctuation">.</span>5<span class="token punctuation">.</span>11/etcd-v3<span class="token punctuation">.</span>5<span class="token punctuation">.</span>11-linux-amd64<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
+$ tar xzvf etcd-v3<span class="token punctuation">.</span>5<span class="token punctuation">.</span>11-linux-amd64<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
+$ 
+<span class="token function">tee</span> <span class="token operator">/</span>usr/lib/systemd/system/etcd<span class="token punctuation">.</span>service &lt;&lt;<span class="token operator">-</span><span class="token string">'EOF'</span>
+<span class="token namespace">[Unit]</span>
+Description=Etcd Server
+After=network<span class="token punctuation">.</span>target
+<span class="token namespace">[Service]</span>
+<span class="token function">Type</span>=notify
+ExecStart=<span class="token operator">/</span>usr/local/bin/etcd \
+<span class="token operator">--</span>name=k8s-master01 \
+<span class="token operator">--</span><span class="token keyword">data</span><span class="token operator">-</span><span class="token function">dir</span>=<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/etcd/default<span class="token punctuation">.</span>etcd \
+<span class="token operator">--</span>listen-peer-urls=http:<span class="token operator">/</span><span class="token operator">/</span>192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135:2380 \
+<span class="token operator">--</span>listen-client-urls=http:<span class="token operator">/</span><span class="token operator">/</span>192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135:2379<span class="token punctuation">,</span>http:<span class="token operator">/</span><span class="token operator">/</span>127<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1:2379 \
+<span class="token operator">--</span>advertise-client-urls=http:<span class="token operator">/</span><span class="token operator">/</span>192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135:2379 \
+<span class="token operator">--</span>initial-advertise-peer-urls=http:<span class="token operator">/</span><span class="token operator">/</span>192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135:2380 \
+<span class="token operator">--</span>initial-cluster=k8s-master1=http:<span class="token operator">/</span><span class="token operator">/</span>192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>85<span class="token punctuation">.</span>135:2380 \
+<span class="token operator">--</span>initial-cluster-token=smartgo \
+<span class="token operator">--</span>initial-cluster-state=new
+Restart=on-failure
+LimitNOFILE=65536
+<span class="token namespace">[Install]</span>
+WantedBy=multi-user<span class="token punctuation">.</span>target
+EOF
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="三、安装containerd作为Runtime"><a href="#三、安装containerd作为Runtime" class="headerlink" title="三、安装containerd作为Runtime"></a>三、安装containerd作为Runtime</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## https://github.com/containernetworking/plugins/releases/</span>
+$ wget https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/containernetworking/plugins/releases/download/v1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>0/cni-plugins-linux-amd64-v1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>0<span class="token punctuation">.</span>tgz
+
+<span class="token comment">## 创建cni插件所需目录</span>
+$ mkdir <span class="token operator">-</span>p <span class="token operator">/</span>etc/cni/net<span class="token punctuation">.</span>d <span class="token operator">/</span>opt/cni/bin
+
+<span class="token comment">## 解压cni二进制包</span>
+$ tar xf cni-plugins-linux-amd64-v*<span class="token punctuation">.</span>tgz <span class="token operator">-</span>C <span class="token operator">/</span>opt/cni/bin/
+
+$ wget https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/containerd/containerd/releases/download/v1<span class="token punctuation">.</span>7<span class="token punctuation">.</span>13/containerd-1<span class="token punctuation">.</span>7<span class="token punctuation">.</span>13-linux-amd64<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
+tar xvf containerd-1<span class="token punctuation">.</span>7<span class="token punctuation">.</span>13-linux-amd64<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用k0s部署k8s"><a href="#使用k0s部署k8s" class="headerlink" title="使用k0s部署k8s"></a>使用k0s部署k8s</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">$ wget https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/k0sproject/k0sctl/releases/download/v0<span class="token punctuation">.</span>17<span class="token punctuation">.</span>4/k0sctl-linux-x64
+
+$ chmod <span class="token operator">+</span>x k0sctl-linux-x64
+$ <span class="token function">mv</span> k0sctl-linux-x64 <span class="token operator">/</span>usr/bin/k0sctl
+mkdir k0sdir
+$ cd k0sdir/
+$ <span class="token function">ls</span>
+$ k0sctl init <span class="token operator">--</span>k0s &gt; k0sctl<span class="token punctuation">.</span>yaml
+<span class="token operator">-</span> ssh:
+address: 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>10<span class="token punctuation">.</span>161
+user: root
+port: 22
+keyPath: <span class="token operator">/</span>root/<span class="token punctuation">.</span>ssh/id_rsa
+role: controller+worker
+
+
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -726,7 +969,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Bright86/posts/4a17b156.html">https://github.com/Bright86/posts/4a17b156.html</a>
+                    <a href="https://github.com/Bright86/posts/cc708553.html">https://github.com/Bright86/posts/cc708553.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -763,7 +1006,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/Gitea/">
+                                    <span class="chip bg-color">Gitea</span>
+                                </a>
+                            
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1237,24 +1492,24 @@ new Valine({
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/cc708553.html">
+                <a href="/posts/a6f5b56e.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928012804.jpg" class="responsive-img" alt="k8s-introduce">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015537.jpg" class="responsive-img" alt="article title">
                         
-                        <span class="card-title">k8s-introduce</span>
+                        <span class="card-title">article title</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录Docker安装gitea
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-04-07
                         </span>
                         <span class="publish-author">
                             
@@ -1267,16 +1522,8 @@ new Valine({
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/Gitea/">
-                        <span class="chip bg-color">Gitea</span>
-                    </a>
-                    
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/k8s-ubuntu-containerd/">
+                        <span class="chip bg-color">k8s ubuntu containerd</span>
                     </a>
                     
                 </div>
@@ -1290,13 +1537,13 @@ new Valine({
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/a878908b.html">
+                <a href="/posts/4a17b156.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928021853.jpg" class="responsive-img" alt="install-k8s">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">install-k8s</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1307,7 +1554,7 @@ new Valine({
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-24
                             </span>
                         <span class="publish-author">
                             
